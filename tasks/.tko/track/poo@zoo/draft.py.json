@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-03_14-52-46",
+            "content": "@@ -1 +0,0 @@\n-%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-12-03_14-56-56",
+            "content": "@@ -1,145 +1 @@\n-class Animal:%0A    def __init__(self, nome: str):%0A        self.__nome = nome%0A%0A    def apresentar_nome(self):%0A        print(%22Eu sou um(a) %3Cnome%3E!%22)\n+%0A\n",
+            "lines": "1"
+        },
+        {
+            "label": "2025-12-03_15-03-58",
+            "content": "class Animal:\n    def __init__(self, nome: str):\n        self.__nome = nome\n\n    def apresentar_nome(self):\n        print(\"Eu sou um(a) <nome>!\")",
+            "lines": "6"
+        }
+    ]
+}
