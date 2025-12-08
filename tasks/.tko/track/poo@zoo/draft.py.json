@@ -12,8 +12,38 @@
         },
         {
             "label": "2025-12-03_15-03-58",
-            "content": "class Animal:\n    def __init__(self, nome: str):\n        self.__nome = nome\n\n    def apresentar_nome(self):\n        print(\"Eu sou um(a) <nome>!\")",
+            "content": "@@ -1,41 +1,4 @@\n-from abc import ABC, abstractmethod%0A%0A\n clas\n@@ -9,35 +9,10 @@\n imal\n-(ABC)\n :%0A\n-    @abstractmethod%0A\n     \n@@ -58,19 +58,22 @@\n self\n- %0A%0A        \n+.__nome = nome\n %0A%0A  \n@@ -103,16 +103,8 @@\n elf)\n- -%3E None\n :%0A  \n",
             "lines": "6"
+        },
+        {
+            "label": "2025-12-05_13-35-28",
+            "content": "@@ -120,26 +120,10 @@\n self\n-.nome: str =  nome\n+ %0A\n %0A   \n@@ -129,18 +129,16 @@\n       %0A%0A\n-%0A%0A\n     def \n",
+            "lines": "11"
+        },
+        {
+            "label": "2025-12-08_01-32-51",
+            "content": "@@ -1,211 +1,302 @@\n-from abc import ABC, abstractmethod%0A%0Aclass Animal(ABC):%0A    def __init__(self, nome: str):%0A        self.nome: str =  nome%0A        %0A    def apresentar_nome(self):%0A        print(f%22Eu sou um(a) %7Bself.nome%7D!%22)%0A%0A\n+@@ -49,16 +49,36 @@%0A l(ABC):%250A%0A+    @abstractmethod%250A%0A     def %0A@@ -144,16 +144,19 @@%0A        %250A%0A+%250A%250A%250A%0A     def %0A@@ -176,16 +176,24 @@%0A me(self)%0A+ -%253E None%0A :%250A      %0A@@ -200,17 +200,16 @@%0A   print(%0A-f%0A %2522Eu sou %0A@@ -218,250 +218,13 @@%0A (a) %0A-%257Bself.%0A+%253C%0A nome%0A-%257D%0A+%253E%0A !%2522)%0A-%250A%250A\n     \n@@ -302,33 +302,35 @@\n  @abstractmethod\n-%0A\n+%250A\n     def fazer_so\n@@ -349,33 +349,35 @@\n #metodo abstrato\n-%0A\n+%250A\n         pass%0A%0A  \n@@ -372,18 +372,22 @@\n     pass\n-%0A%0A\n+%250A%250A\n     @abs\n@@ -397,17 +397,19 @@\n ctmethod\n-%0A\n+%250A\n     def \n@@ -441,17 +441,19 @@\n abstrato\n-%0A\n+%250A\n         \n@@ -460,10 +460,14 @@\n pass\n-%0A%0A\n+%250A%250A\n clas\n@@ -532,13 +532,16 @@\n (Animal)\n-%0A\n+%250A\n     \n+%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2025-12-08_01-50-29",
+            "content": "@@ -365,12 +365,16 @@\n ass \n-Leao\n+Elefante\n (Ani\n@@ -434,546 +434,4 @@\n     \n-def __init__(self, nome: str):%0A        super().__init__(nome)%0A%0A    def fazer_som(self):%0A        print(%22miaaaal%22)%0A%0A    def mover(self):%0A        print(%22caminhada%22)%0A%0Aclass Elefante(Animal):%0A    def __init__(self, nome: str):%0A        super().__init__(nome)%0A%0A    def fazer_som(self):%0A        print(%22Truuuu%22)%0A%0A    def mover(self):%0A        print(%22bum (andando)%22)%0A%0Aclass cobra(Animal):%0A    def __init__(self, nome: str):%0A        super().__init__(nome)%0A%0A    def fazer_som(self):%0A        print(%22Ssssss%22)%0A%0A    def mover(self):%0A        print(%22rasteja%22)%0A%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2025-12-08_02-04-08",
+            "content": "@@ -972,182 +972,4 @@\n %22)%0A%0A\n-def apresentar(animal: Animal):%0A    #chama os m%C3%A9todos%0A    animal.apresentar_nome()%0A    animal.fazer_som()%0A    animal.mover()%0A    print(f%22Tipo de Objeto: %7Btype(animal).__name__%7D%22)\n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-12-08_02-11-52",
+            "content": "@@ -789,17 +789,17 @@\n %0A%0Aclass \n-C\n+c\n obra(Ani\n@@ -1150,121 +1150,4 @@\n _%7D%22)\n-%0A%0Aif __name__ == %22__main__%22:%0A%0A    simba = Leao(%22Simba%22)%0A    bolota = Elefante(%22Bolota%22)%0A    juditi = Cobra(%22Juditi%22)%0A\n",
+            "lines": "53"
+        },
+        {
+            "label": "2025-12-08_02-20-09",
+            "content": "from abc import ABC, abstractmethod\n\nclass Animal(ABC):\n    def __init__(self, nome: str):\n        self.nome: str =  nome\n        \n    def apresentar_nome(self):\n        print(f\"Eu sou um(a) {self.nome}!\")\n\n    @abstractmethod\n    def fazer_som(self):    #metodo abstrato\n        pass\n\n    @abstractmethod\n    def mover(self):     #metodo abstrato\n        pass\n\nclass Leao(Animal):     #subclass que obdece a class base (Animal)\n    def __init__(self, nome: str):\n        super().__init__(nome)\n\n    def fazer_som(self):\n        print(\"miaaaal\")\n\n    def mover(self):\n        print(\"caminhada\")\n\nclass Elefante(Animal):\n    def __init__(self, nome: str):\n        super().__init__(nome)\n\n    def fazer_som(self):\n        print(\"Truuuu\")\n\n    def mover(self):\n        print(\"bum (andando)\")\n\nclass Cobra(Animal):\n    def __init__(self, nome: str):\n        super().__init__(nome)\n\n    def fazer_som(self):\n        print(\"Ssssss\")\n\n    def mover(self):\n        print(\"rasteja\")\n\ndef apresentar(animal: Animal):\n    #chama os m\u00e9todos\n    animal.apresentar_nome()\n    animal.fazer_som()\n    animal.mover()\n    print(f\"Tipo de Objeto: {type(animal).__name__}\")\n\nif __name__ == \"__main__\":\n\n    simba = Leao(\"Simba\")\n    bolota = Elefante(\"Bolota\")\n    juditi = Cobra(\"Juditi\")\n",
+            "lines": "59"
         }
     ]
 }
