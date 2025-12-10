@@ -27,8 +27,27 @@ class Pix(Pagamento):
     
 class CartaoCredito(Pagamento):
     def __init__(self, valor: float, descricao: str, numero: int, nome_titular: str, limite_disponivel: int):
+        super().__init__(valor, descricao)
         self.numero: int = numero
         self.nome_titular = nome_titular
+        self.limite_disponivel = limite_disponivel
+
+    def processar(self):
+        if self.valor > self.limite_disponivel:
+            print(f"Erro: Limite insuficiente no cartão {self.numero}")
+            return
+        else:
+            self.limite_disponivel = self.limite_disponivel - self.valor
+            print(f"Pagamento aprovado no cartão Cliente {self.nome_titular}. Limite restante: {self.limite_disponivel}")
+
+class Boleto(Pagamento):
+    def __init__(self, valor: float, descricao: str, codigo_barras: float, vencimento: int):
+        super().__init__(valor, descricao)
+        self.codigo_barras = codigo_barras
+        self.vencimento = vencimento
+
+    def processar(self):
+        print("Boleto gerado. Aguardando pagamento...")
 
 
 def processar_pagamento(pagamento: Pagamento):
@@ -38,3 +57,12 @@ def processar_pagamento(pagamento: Pagamento):
 
 pix = Pix(2.50, "café coado", "123", "pikipeiii")
 processar_pagamento(pix)
+
+cartao_aprovado = CartaoCredito(150.00, "Livro Python Avançado", 1111, "Maria S", 300.00)
+processar_pagamento(cartao_aprovado)
+
+boleto = Boleto(75.50, "Mensalidade Academia", 987654321, 20261230)
+processar_pagamento(boleto)
+
+cartao_negado = CartaoCredito(500.00, "Tênis", 2222, "João P", 100)
+processar_pagamento(cartao_negado)
