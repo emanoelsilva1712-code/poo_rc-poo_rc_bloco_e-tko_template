@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-10_15-24-35",
+            "content": "@@ -1,12 +1,31 @@\n+@@ -1,899 +0,0 @@%0A-\n class Estaci\n@@ -33,17 +33,19 @@\n namento:\n-%0A\n+%250A\n     def \n@@ -85,25 +85,27 @@\n Atual: int):\n-%0A\n+%250A\n         self\n@@ -122,17 +122,19 @@\n  veiculo\n-%0A\n+%250A\n         \n@@ -159,18 +159,22 @@\n oraAtual\n-%0A%0A\n+%250A%250A\n from abc\n@@ -200,17 +200,19 @@\n ctmethod\n-%0A\n+%250A\n class Ve\n@@ -222,17 +222,19 @@\n lo(ABC):\n-%0A\n+%250A\n     def \n@@ -278,33 +278,35 @@\n raEntrada: int):\n-%0A\n+%250A\n         self.id \n@@ -309,17 +309,19 @@\n .id = id\n-%0A\n+%250A\n         \n@@ -336,17 +336,19 @@\n o = tipo\n-%0A\n+%250A\n         \n@@ -377,18 +377,22 @@\n aEntrada\n-%0A%0A\n+%250A%250A\n     @abs\n@@ -402,17 +402,19 @@\n ctmethod\n-%0A\n+%250A\n     def \n@@ -433,17 +433,19 @@\n r(self):\n-%0A\n+%250A\n         \n@@ -448,18 +448,22 @@\n     pass\n-%0A%0A\n+%250A%250A\n class Bi\n@@ -466,33 +466,35 @@\n s Bike(Veiculo):\n-%0A\n+%250A\n     def __init__\n@@ -530,33 +530,35 @@\n raEntrada: int):\n-%0A\n+%250A\n         super().\n@@ -580,34 +580,38 @@\n po, horaEntrada)\n-%0A%0A\n+%250A%250A\n     def Calcular\n@@ -618,27 +618,33 @@\n Valor(self):\n-%0A%0A%0A\n+%250A%250A%250A\n class Moto(V\n@@ -643,33 +643,35 @@\n s Moto(Veiculo):\n-%0A\n+%250A\n     def __init__\n@@ -707,33 +707,35 @@\n raEntrada: int):\n-%0A\n+%250A\n         super().\n@@ -757,34 +757,38 @@\n po, horaEntrada)\n-%0A%0A\n+%250A%250A\n     def Calcular\n@@ -803,11 +803,17 @@\n lf):\n-%0A%0A%0A\n+%250A%250A%250A\n clas\n@@ -829,17 +829,19 @@\n eiculo):\n-%0A\n+%250A\n     def \n@@ -893,17 +893,19 @@\n a: int):\n-%0A\n+%250A\n         \n@@ -943,18 +943,22 @@\n Entrada)\n-%0A%0A\n+%250A%250A\n     def \n@@ -977,10 +977,15 @@\n r(self):\n-%0A\n+%250A%250A\n %0A\n",
+            "lines": "2"
+        },
+        {
+            "label": "2025-12-10_15-45-38",
+            "content": "@@ -896,273 +896,4 @@\n ):%0A%0A\n-def main():%0A%0A    estacionamento = Estacionamento()%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split()        %0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A%0A        elif args%5B0%5D == %22show%22:%0A            print(estacionamento)%0A%0A%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-12-10_16-10-32",
+            "content": "class Estacionamento:\n    def __init__(self, veiculo: str, horaAtual: int):\n        self.veiculo = veiculo\n        self.horaAtual = horaAtual\n\nfrom abc import ABC, abstractmethod\nclass Veiculo(ABC):\n    def __init__(self, id: str, tipo: str, horaEntrada: int):\n        self.id = id\n        self.tipo = tipo\n        self.horaEntrada = horaEntrada\n\n    @abstractmethod\n    def calcularValor(self):\n        pass\n\nclass Bike(Veiculo):\n    def __init__(self, id: str, tipo: str, horaEntrada: int):\n        super().__init__(id, tipo, horaEntrada)\n\n    def CalcularValor(self):\n\n\nclass Moto(Veiculo):\n    def __init__(self, id: str, tipo: str, horaEntrada: int):\n        super().__init__(id, tipo, horaEntrada)\n\n    def CalcularValor(self):\n\n\nclass Carro(Veiculo):\n    def __init__(self, id: str, tipo: str, horaEntrada: int):\n        super().__init__(id, tipo, horaEntrada)\n\n    def CalcularValor(self):\n\ndef main():\n\n    estacionamento = Estacionamento()\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split()        \n\n        if args[0] == \"end\":\n            break\n\n        elif args[0] == \"show\":\n            print(estacionamento)\n\n\n",
+            "lines": "51"
+        }
+    ]
+}

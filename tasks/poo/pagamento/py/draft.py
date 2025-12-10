@@ -58,7 +58,7 @@ def processar_pagamento(pagamento: Pagamento):
 pix = Pix(2.50, "café coado", "123", "pikipeiii")
 processar_pagamento(pix)
 
-cartao_aprovado = CartaoCredito(150.00, "Livro Python Avançado", 1111, "Maria S", 300.00)
+cartao_aprovado = CartaoCredito(150.00, "Livro Python Avançado", 1111, "Maria S", 300)
 processar_pagamento(cartao_aprovado)
 
 boleto = Boleto(75.50, "Mensalidade Academia", 987654321, 20261230)
